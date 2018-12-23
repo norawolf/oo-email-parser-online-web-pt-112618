@@ -11,6 +11,9 @@ class EmailParser
   end
 
   def parse
-    @emails.split(/[,\s]/).uniq.reject {|e| e.empty?}
+    #refactoring
+    @emails.split(/, | /).uniq
+    # original
+    # @emails.split(/[,\s]/).uniq.reject {|e| e.empty?}
   end
 end
